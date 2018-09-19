@@ -1,0 +1,27 @@
+INFO	2018-09-19 16:35:19,317	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-19 16:35:23,625	4308	PurchaseStepDef	[main]	****M****
+INFO	2018-09-19 16:35:23,625	4308	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-19 16:35:23,751	4434	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-19 16:35:36,168	16851	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-19 16:39:49,836	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-19 16:39:54,106	4270	PurchaseStepDef	[main]	****M****
+INFO	2018-09-19 16:39:54,106	4270	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-19 16:39:54,203	4367	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-19 16:40:08,133	18297	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-19 16:49:22,160	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-19 16:49:26,435	4275	PurchaseStepDef	[main]	****M****
+INFO	2018-09-19 16:49:26,435	4275	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-19 16:49:26,520	4360	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-19 16:49:38,649	16489	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-19 16:58:06,769	0	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-19 16:58:06,806	37	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-19 16:58:06,831	62	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-19 17:01:04,268	0	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-19 17:01:04,296	28	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-19 17:01:04,310	42	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-19 17:02:02,261	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-19 17:02:06,538	4277	PurchaseStepDef	[main]	****M****
+INFO	2018-09-19 17:02:06,539	4278	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-19 17:02:06,620	4359	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-19 17:02:19,629	17368	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-19 17:02:22,739	20478	PurchaseStepDef	[main]	***** Yet to be implemented *****
