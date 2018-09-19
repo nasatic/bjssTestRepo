@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "StepDef",
         format = {"pretty", "html:target/cucumber-html-reports",
                 "json:target/cucumber.json"},
-        tags = {"@Ibe"})
+        tags = {"@Ibe1"})
 
 public class Runner extends AbstractTestNGCucumberTests {
 }

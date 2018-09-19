@@ -37,6 +37,3 @@ Feature: Purchasing of two items from site
     When User selects an item
     Then User verifies the color of item selected
     And User signs out of application
-
-
-
