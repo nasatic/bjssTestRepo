@@ -97,3 +97,17 @@ INFO	2018-09-20 16:18:29,507	4292	PurchaseStepDef	[main]	*****No match returned*
 INFO	2018-09-20 16:18:29,584	4369	PurchaseStepDef	[main]	***added to cart****
 INFO	2018-09-20 16:18:41,609	16394	PurchaseStepDef	[main]	***added to cart****
 INFO	2018-09-20 16:18:44,850	19635	PurchaseStepDef	[main]	***** Yet to be implemented *****
+INFO	2018-09-20 16:26:30,034	0	ApiStepDef	[main]	xxxxx No response body xxxxxx
+INFO	2018-09-20 16:27:07,336	37302	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:27:11,609	41575	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 16:27:11,609	41575	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:27:11,684	41650	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:27:24,013	53979	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:27:27,157	57123	PurchaseStepDef	[main]	***** Yet to be implemented *****
+INFO	2018-09-20 16:30:57,905	0	ApiStepDef	[main]	xxxxx No response body xxxxxx
+INFO	2018-09-20 16:31:33,621	35716	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:31:37,903	39998	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 16:31:37,903	39998	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:31:37,981	40076	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:31:49,922	52017	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:31:53,101	55196	PurchaseStepDef	[main]	***** Yet to be implemented *****
