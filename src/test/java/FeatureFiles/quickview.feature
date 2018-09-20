@@ -13,7 +13,6 @@ Feature: Purchasing of two items from site
     And User checks out
 #    Then The price for "Blouse" should be as before
 #    And The price for "PrintedDress" should be as before
-    And The total is sum of the item cost plus shipping
     And User completes payment by wire
     And User logs out of application
 
@@ -26,7 +25,6 @@ Feature: Purchasing of two items from site
     When User posts an order comment
     Then Message is displayed under messages section
     And User signs out of application
-
 
   Scenario: 3. Capture Image
     Given User is logged into site

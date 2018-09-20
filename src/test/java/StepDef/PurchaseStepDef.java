@@ -64,12 +64,6 @@ public class PurchaseStepDef {
     }
 
 
-    @And("^The total is sum of the item cost plus shipping$")
-    public void theTotalIsSumOfTheItemCostPlusShipping() {
-        logger.info("***** Yet to be implemented *****");
-    }
-
-
     @When("^User checks out$")
     public void userChecksOut() throws InterruptedException {
         Thread.sleep(2000);

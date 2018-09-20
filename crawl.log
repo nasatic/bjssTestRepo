@@ -111,3 +111,24 @@ INFO	2018-09-20 16:31:37,903	39998	PurchaseStepDef	[main]	*****No match returned
 INFO	2018-09-20 16:31:37,981	40076	PurchaseStepDef	[main]	***added to cart****
 INFO	2018-09-20 16:31:49,922	52017	PurchaseStepDef	[main]	***added to cart****
 INFO	2018-09-20 16:31:53,101	55196	PurchaseStepDef	[main]	***** Yet to be implemented *****
+INFO	2018-09-20 16:45:06,543	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:45:10,830	4287	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 16:45:10,830	4287	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:45:10,912	4369	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:45:23,259	16716	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:47:06,543	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:47:10,875	4332	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 16:47:10,875	4332	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:47:10,956	4413	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:47:22,874	16331	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:49:43,679	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:49:47,976	4297	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 16:49:47,976	4297	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:49:48,063	4384	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:50:00,264	16585	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:51:10,510	0	ApiStepDef	[main]	xxxxx No response body xxxxxx
+INFO	2018-09-20 16:52:01,355	50845	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:52:05,633	55123	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 16:52:05,633	55123	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:52:10,708	60198	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:52:42,441	91931	PurchaseStepDef	[main]	***added to cart****

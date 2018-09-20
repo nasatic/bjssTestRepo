@@ -1,7 +1,6 @@
 Feature: Api Request on endpoints
 
-
-  Scenario Outline: GET Request from USERS
+  Scenario Outline: 1. GET Request from USERS
     When User makes a request to endpoint "<endPoint>" using payload for "<case>"
     Then Response code should be "<statusCode>" for "<case>"
     And  Response body for case "<case>" should contain response data "<data>"
@@ -12,8 +11,7 @@ Feature: Api Request on endpoints
       | https://reqres.in/api/users/23     | 404        |        | none   |
 
 
-
-  Scenario Outline: PUT PATCH and DELETE Requests
+  Scenario Outline: 2. PUT PATCH and DELETE Requests
     When User makes a request to endpoint "<endPoint>" using payload for "<requestType>"
     Then Response code for "<requestType>" should be "<statusCode>"
     And Response body for case "<requestType>" should contain response data "<data>"
@@ -24,7 +22,7 @@ Feature: Api Request on endpoints
       | https://reqres.in/api/users/2 | 204        |              | DELETE      |
 
 
-  Scenario Outline: POST: Requests for login and registration
+  Scenario Outline: 3. POST: Requests for login and registration
     When User makes a request to endpoint "<endPoint>" using payload for "<case>"
     Then Response code for "<case>" should be "<statusCode>"
     And Response body for case "<case>" should contain response data "<data>"
