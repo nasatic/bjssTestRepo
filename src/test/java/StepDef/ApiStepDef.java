@@ -6,12 +6,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.testng.annotations.BeforeTest;
 
 import static io.restassured.RestAssured.given;
 
 public class ApiStepDef {
+    Logger logger = Logger.getLogger("ApiStepDef");
     PayLoad payLoad = new PayLoad();
     String sUserUrl = "https://reqres.in/api/users/2";
     String mUserUrl = "https://reqres.in/api/users?page=2";
@@ -90,7 +92,7 @@ public class ApiStepDef {
                 break;
 
             case "none":
-                System.out.println("xxxxx No response body xxxxxx");
+                logger.info("xxxxx No response body xxxxxx");
                 break;
 
             case "PUT":
