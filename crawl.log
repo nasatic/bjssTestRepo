@@ -55,3 +55,39 @@ INFO	2018-09-20 00:17:44,538	0	PurchaseStepDef	[main]	Screen print exception:nul
 INFO	2018-09-20 00:18:55,835	0	PurchaseStepDef	[main]	Screen print exception:null
 INFO	2018-09-20 00:19:26,246	0	PurchaseStepDef	[main]	Screen print exception:null
 INFO	2018-09-20 00:19:27,475	1229	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 00:42:33,196	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 00:42:37,485	4289	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 00:42:37,485	4289	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 00:42:37,567	4371	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 00:42:51,621	18425	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 00:42:54,737	21541	PurchaseStepDef	[main]	***** Yet to be implemented *****
+INFO	2018-09-20 09:01:01,397	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 09:01:05,691	4294	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 09:01:05,691	4294	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 09:01:05,775	4378	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 09:01:19,925	18528	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 09:01:25,453	24056	PurchaseStepDef	[main]	***** Yet to be implemented *****
+INFO	2018-09-20 14:36:55,990	0	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:36:57,135	1145	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:36:58,159	2169	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:38:28,836	0	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:38:29,896	1060	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:39:01,726	0	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:44:25,060	0	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:44:26,457	1397	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:46:19,990	0	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:46:21,156	1166	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 14:46:22,198	2208	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 15:55:30,633	0	PurchaseStepDef	[main]	Screen print exception:null
+INFO	2018-09-20 16:08:44,411	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:08:48,694	4283	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 16:08:48,694	4283	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:08:48,785	4374	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:09:01,695	17284	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:09:04,845	20434	PurchaseStepDef	[main]	***** Yet to be implemented *****
+INFO	2018-09-20 16:13:53,565	0	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:13:57,848	4283	PurchaseStepDef	[main]	****M****
+INFO	2018-09-20 16:13:57,849	4284	PurchaseStepDef	[main]	*****No match returned*******
+INFO	2018-09-20 16:13:57,929	4364	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:14:10,210	16645	PurchaseStepDef	[main]	***added to cart****
+INFO	2018-09-20 16:14:13,332	19767	PurchaseStepDef	[main]	***** Yet to be implemented *****

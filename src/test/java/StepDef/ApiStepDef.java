@@ -1,21 +1,18 @@
 package StepDef;
 
-import cucumber.api.PendingException;
+import Utility.PayLoad;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.testng.annotations.BeforeTest;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsEqual.equalTo;
+import static io.restassured.RestAssured.given;
 
 public class ApiStepDef {
+    PayLoad payLoad = new PayLoad();
     String sUserUrl = "https://reqres.in/api/users/2";
     String mUserUrl = "https://reqres.in/api/users?page=2";
     String noUserUrl = "https://reqres.in/api/users/23";
@@ -25,68 +22,58 @@ public class ApiStepDef {
 
     @BeforeTest
     public Response setValResponse() {
-        Response res = given()
-                .contentType(ContentType.JSON)
-                .when()
-                .get(sUserUrl);
+        Response res = given().contentType(ContentType.JSON).when().get(sUserUrl);
         return res;
     }
 
     public Response setValResForNoUser() {
-        Response res = given()
-                .contentType(ContentType.JSON)
-                .when()
-                .get(noUserUrl);
+        Response res = given().contentType(ContentType.JSON).when().get(noUserUrl);
         return res;
     }
 
-    public Response setValResForLoginUrl() {
-        Response res = given()
-                .contentType(ContentType.JSON)
-                .when()
-                .get(loginUrl);
+    public Response getPostForLoginPass() {
+        Response res = given().contentType(ContentType.JSON).with().body(payLoad.postLoginSuccess()).when().post(loginUrl);
         return res;
     }
 
-    public Response setValResForRegUrl() {
-        Response res = given()
-                .contentType(ContentType.JSON)
-                .when()
-                .get(regUrl);
+    public Response getPostLoginFail() {
+        Response res = given().contentType(ContentType.JSON).with().body(payLoad.postLoginFailure()).when().post(loginUrl);
         return res;
     }
 
-    public Response setValResForAddUsrUrl() {
-        Response res = given()
-                .contentType(ContentType.JSON)
-                .when()
-                .get(addUserUrl);
+    public Response getPostRegPass() {
+        Response res = given().contentType(ContentType.JSON).with().body(payLoad.postRegSuccess()).when().post(regUrl);
+        return res;
+    }
+
+    public Response getPostRegFail() {
+        Response res = given().contentType(ContentType.JSON).with().body(payLoad.postRegFailure()).when().post(regUrl);
+        return res;
+    }
+
+    public Response getPostAddUser() {
+        Response res = given().contentType(ContentType.JSON).with().body(payLoad.postCreateUser()).when().post(addUserUrl);
+        return res;
+    }
+
+    public Response getResponseFromPut() {
+        Response res = given().contentType(ContentType.JSON).with().body(payLoad.putPayLoad()).put(sUserUrl);
+        return res;
+    }
+
+    public Response getResponseFromPatch() {
+        Response res = given().contentType(ContentType.JSON).with().body(payLoad.patchPayLoad()).patch(sUserUrl);
+        return res;
+    }
+
+    public Response getResponseFromDelete() {
+        Response res = given().contentType(ContentType.JSON).when().delete(sUserUrl);
         return res;
     }
 
     public Response setValResponseM() {
-        Response res = given()
-                .contentType(ContentType.JSON)
-                .when()
-                .get(mUserUrl);
+        Response res = given().contentType(ContentType.JSON).when().get(mUserUrl);
         return res;
-
-
-    }
-
-
-    @When("^User makes a GET request to endpoint \"([^\"]*)\"$")
-    public void userMakesAGETRequestToEndpoint(String url) throws Throwable {
-        given()
-                .contentType(ContentType.JSON)
-                .when()
-                .get(url)
-                .then().log().all();
-    }
-
-    @Then("^Response code should be \"([^\"]*)\"$")
-    public void responseCodeShouldBe(int statusCode) throws Throwable {
-        Assert.assertEquals(setValResponseM().statusCode(), statusCode);
 
     }
 
@@ -97,100 +84,93 @@ public class ApiStepDef {
             case "many":
                 Assert.assertEquals(setValResponseM().then().extract().path("data[1].last_name"), (data));
                 break;
+
             case "single":
                 Assert.assertEquals(setValResponse().then().extract().path("data.first_name"), (data));
                 break;
+
             case "none":
                 System.out.println("xxxxx No response body xxxxxx");
                 break;
+
+            case "PUT":
+                Assert.assertEquals(getResponseFromPut().then().extract().path("job"), ((data)));
+                break;
+
+            case "PATCH":
+                Assert.assertEquals(getResponseFromPatch().then().extract().path("name"), ((data)));
+                break;
+
+            case "DELETE":
+                Assert.assertTrue(getResponseFromDelete().asString().isEmpty());
+                break;
+
+            case "loginMissingPswd":
+                Assert.assertEquals(getPostLoginFail().then().extract().path("error"), ((data)));
+                break;
+
+            case "LoginCorrectPswd":
+                Assert.assertEquals(getPostForLoginPass().then().extract().path("token"), ((data)));
+                break;
+
+            case "RegMissingPswd":
+                Assert.assertEquals(getPostRegFail().then().extract().path("error"), ((data)));
+                break;
+            case "RegCorrectPswd":
+                Assert.assertEquals(getPostRegPass().then().extract().path("token"), ((data)));
+                break;
+            case "PostToAddUser":
+                Assert.assertEquals(getPostAddUser().then().extract().path("name"), ((data)));
+                break;
         }
-        System.out.println("***** Invalid selection *****");
 
-
-    }
-
-
-
-    @And("^Response body should contain multiple response data$")
-    public void responseBodyShouldContainMultipleResponseData() throws Throwable {
-        String index1data = setValResponseM().then().extract().path("data[0].first_name");
-        int index3data = setValResponseM().then().extract().path("data[2].id");
-        Assert.assertEquals(index1data, "Eve");
-        Assert.assertEquals(index3data, 6);
-
-
-    }
-
-    @When("^User makes a GET request$")
-    public void userMakesAGETRequest() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @When("^User makes a POST request to endpoint \"([^\"]*)\"$")
-    public void userMakesAPOSTRequestToEndpoint(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @And("^Response body should contain posted data \"([^\"]*)\"$")
-    public void responseBodyShouldContainPostedData(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @When("^User makes a PUT request to endpoint \"([^\"]*)\"$")
-    public void userMakesAPUTRequestToEndpoint(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @And("^Response body should contain updated data \"([^\"]*)\"$")
-    public void responseBodyShouldContainUpdatedData(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @When("^User makes a PATCH request to endpoint \"([^\"]*)\"$")
-    public void userMakesAPATCHRequestToEndpoint(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @And("^Response body should contain patched data \"([^\"]*)\"$")
-    public void responseBodyShouldContainPatchedData(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @When("^User makes a DELETE request to endpoint \"([^\"]*)\"$")
-    public void userMakesADELETERequestToEndpoint(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @And("^Response body should not contain deleted data \"([^\"]*)\"$")
-    public void responseBodyShouldNotContainDeletedData(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
     }
 
     @When("^User makes a request to endpoint \"([^\"]*)\" using payload for \"([^\"]*)\"$")
-    public void userMakesARequestToEndpointUsingPayloadFor(String arg0, String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
+    public void userMakesARequestToEndpointUsingPayloadFor(String url, String reqType) throws Throwable {
+        switch (reqType) {
+            case "PUT":
+                given().contentType(ContentType.JSON).with().body(payLoad.putPayLoad()).when().put(url);
+                break;
 
-    @And("^Response body should contain data \"([^\"]*)\"$")
-    public void responseBodyShouldContainData(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
+            case "many":
+                given().contentType(ContentType.JSON).when().log().all().get(mUserUrl);
+                break;
+            case "single":
+                given().contentType(ContentType.JSON).when().log().all().get(sUserUrl);
+                break;
+            case "none":
+                given().contentType(ContentType.JSON).when().log().all().get(noUserUrl);
+                break;
 
-    @When("^User makes a POST request to endpoint \"([^\"]*)\" using payload for \"([^\"]*)\"$")
-    public void userMakesAPOSTRequestToEndpointUsingPayloadFor(String arg0, String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+            case "PATCH":
+                given().contentType(ContentType.JSON).with().body(payLoad.patchPayLoad()).when().post(url);
+                break;
+            case "DELETE":
+                given().contentType(ContentType.JSON).when().delete(url);
+                break;
+
+            case "loginMissingPswd":
+                getPostLoginFail();
+                break;
+
+            case "LoginCorrectPsw":
+                getPostForLoginPass();
+                break;
+
+            case "RegMissingPswd":
+                getPostRegFail();
+                break;
+
+            case "RegCorrectPswd":
+                getPostRegPass();
+                break;
+
+            case "PostToAddUser":
+                getPostAddUser();
+                break;
+        }
+
     }
 
     @Then("^Response code should be \"([^\"]*)\" for \"([^\"]*)\"$")
@@ -208,4 +188,19 @@ public class ApiStepDef {
         }
     }
 
+    @Then("^Response code for \"([^\"]*)\" should be \"([^\"]*)\"$")
+    public void responseCodeForShouldBe(String reqtype, int code) throws Throwable {
+        switch (reqtype) {
+            case "PUT":
+                Assert.assertEquals(getResponseFromPut().statusCode(), code);
+                break;
+            case "PATCH":
+                Assert.assertEquals(getResponseFromPatch().statusCode(), code);
+                break;
+            case "DELETE":
+                Assert.assertEquals(getResponseFromDelete().statusCode(), code);
+                break;
+        }
+
+    }
 }

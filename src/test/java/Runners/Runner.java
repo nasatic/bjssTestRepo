@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = "src/test/java/FeatureFiles/",
         glue = "StepDef",
         format = {"pretty", "html:target/cucumber-html-reports",
-                "json:target/cucumber.json"},
-        tags = {"@Ibe1"})
+                "json:target/cucumber.json"})
+//        tags = {"@Ibe2"})
 
 public class Runner extends AbstractTestNGCucumberTests {
 }

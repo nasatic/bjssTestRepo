@@ -2,18 +2,11 @@ package Pages;
 
 import Utility.BaseClass;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
 
 public class AutoPracticeMainPage extends BaseClass {
 
@@ -102,15 +95,12 @@ public class AutoPracticeMainPage extends BaseClass {
     @FindBy(how = How.ID, using = "SubmitLogin")
     WebElement loginButton;
 
-
     @FindBy(how = How.CSS, using = "#passwd")
     WebElement passWord;
 
     @FindBy(how = How.XPATH, using = ".//*[contains(text(),'Sign out')]")
     WebElement signOutButton;
 
-
-    WebDriverWait wait;
 
     public AutoPracticeMainPage(WebDriver driver) {
         super(driver);
@@ -131,7 +121,6 @@ public class AutoPracticeMainPage extends BaseClass {
         userName.sendKeys(Username);
 
     }
-
     public void enterPassword(String Password) {
         passWord.sendKeys(Password);
 
@@ -195,16 +184,12 @@ public class AutoPracticeMainPage extends BaseClass {
     }
 
     public void selectSize(String size) {
-        wait = new WebDriverWait(driver, 5);
-        WebElement test = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#group_1")));
-        Select select = new Select(test);
+        Select select = new Select(sizeDropdown);
         select.selectByVisibleText(size);
 
     }
 
     public void verifySelectedDropText(String size) {
-//        wait = new WebDriverWait(driver, 5);
-//        WebElement test = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#group_1")));
         Select select = new Select(sizeDropdown);
         String selectedSize = select.getFirstSelectedOption().getText();
         Assert.assertEquals(selectedSize, size);
@@ -212,15 +197,11 @@ public class AutoPracticeMainPage extends BaseClass {
     }
 
     public void addProductToCart() {
-        wait = new WebDriverWait(driver, 7);
-        WebElement addButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='add_to_cart']/button")));
-        addButton.click();
+        addToCartButton.click();
     }
 
     public void verifyDefaultDropdownText(String size) {
-        wait = new WebDriverWait(driver, 5);
-        WebElement test = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#group_1")));
-        Select select = new Select(test);
+        Select select = new Select(sizeDropdown);
         String selectedSize = select.getFirstSelectedOption().getText();
         Assert.assertEquals(selectedSize, size);
 

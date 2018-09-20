@@ -1,6 +1,5 @@
 Feature: Purchasing of two items from site
 
-  @Ibe
   Scenario: 1. User can use a quick view an item
     Given User is logged into site
     When User selects "Blouse" to view
@@ -18,7 +17,7 @@ Feature: Purchasing of two items from site
     And User completes payment by wire
     And User logs out of application
 
-  @Ibe
+
   Scenario: 2. Review Previous orders and add message
     Given User is logged into site
     And User navigate to orders page
@@ -29,7 +28,6 @@ Feature: Purchasing of two items from site
     And User signs out of application
 
 
-  @Ibe
   Scenario: 3. Capture Image
     Given User is logged into site
     And User navigate to orders page
